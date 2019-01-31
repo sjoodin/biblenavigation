@@ -107,3 +107,22 @@ iframe{
     width: -webkit-fill-available;
     display:inline-block;
 }
+
+.booktitle{
+
+height: 20px;
+}
+
+.chapter{
+height: 25px;
+border: 2px solid #ffffff00;
+text-align: -webkit-center;
+color: white;
+font-size: initial;
+background: darkgray;
+}
+
+table{
+    
+width: -webkit-fill-available;
+}

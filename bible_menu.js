@@ -112,31 +112,53 @@ sectionsContainer.style.width = sectionsWidth+"px";
 var chaptersContainer = document.createElement("div");
 chaptersContainer.classList.add("chapters");
 menu.appendChild(chaptersContainer);
-chaptersContainer.classList.add("visible");
+//chaptersContainer.classList.add("visible");
 var chaptersWidth = window.innerWidth - sectionsWidth;
 chaptersContainer.style.width = chaptersWidth+"px";
 
 var bright = true;
 
 function showChapters(e){
-    this;
+    chaptersContainer.classList.add("visible");
+    //chaptersContainer.removeChild(chaptersContainer.firstChild);
+    //chaptersContainer.appendChild(e.target.table);
 }
 
 function makeMenuSection(parent,cls,books,books_str){
     var section = document.createElement("div");
-    
+    var table = document.createElement("table");
+    section.chaptersView = table;
+    chaptersContainer.appendChild(table);
     //create chapters
     for (i = 0; i < books.length; i++) {
-      var book = books[i];
-      
+        var book = books[i];
+        var row = table.insertRow(-1);
+        row.classList.add("booktitle");
+        //row.innerHTML = book.label;
+        for (i = 0; i < book.chapters; i++) {
+            //insert_chapter
+            if(i%5 == 0){
+                var row = table.insertRow(-1);
+            }
+            
+            var cell = row.insertCell(-1);
+            cell.innerHTML = ""+(i+1);
+            cell.classList.add("chapter");
+            
+            //var chapter = document.createElement("div");
+            //chapter.classList.add("chapter");
+            //chapter.innerHTML = ""+(i+1);
+            //chaptersContainer.appendChild(chapter);
+        }
+    
     }
-
+    
     section.classList.add(cls);
     section.classList.add(bright?"bright":"dark");
     bright = !bright;
     section.innerHTML=books_str;
     parent.appendChild(section);
-
+    
     section.addEventListener("mousemove", showChapters, true);
     section.addEventListener("touchmove", showChapters, true);
 
@@ -159,13 +181,13 @@ s1 = [
         "url-start":"https://grundbibeln.se/mark-",
         "url-end":"/"
     }
-]
+];
 
 var section1 = makeMenuSection(sectionsContainer,"section",s1,"<br>Matt<br>Mark");
-var section2 = makeMenuSection(sectionsContainer,"section",s1,"<br>Luk<br>Joh");
-var section3 = makeMenuSection(sectionsContainer,"section",s1,"<br><br>Apg");
-var section4 = makeMenuSection(sectionsContainer,"section",s1,"<br>Rom<br>1-2 Kor");
-var section5 = makeMenuSection(sectionsContainer,"section",s1,"Gal<br>Ef<br>Fil<br>Kol");
-var section6 = makeMenuSection(sectionsContainer,"section",s1,"1-2 Thess<br>1-2 Tim<br>Tit<br>Filem");
-var section7 = makeMenuSection(sectionsContainer,"section",s1,"Heb<br>Jak<br>1-2 Pet<br>1-3 Joh<br>Jud");
-var section8 = makeMenuSection(sectionsContainer,"section",s1,"<br><br>Upp");
+//var section2 = makeMenuSection(sectionsContainer,"section",s1,"<br>Luk<br>Joh");
+//var section3 = makeMenuSection(sectionsContainer,"section",s1,"<br><br>Apg");
+//var section4 = makeMenuSection(sectionsContainer,"section",s1,"<br>Rom<br>1-2 Kor");
+//var section5 = makeMenuSection(sectionsContainer,"section",s1,"Gal<br>Ef<br>Fil<br>Kol");
+//var section6 = makeMenuSection(sectionsContainer,"section",s1,"1-2 Thess<br>1-2 Tim<br>Tit<br>Filem");
+//var section7 = makeMenuSection(sectionsContainer,"section",s1,"Heb<br>Jak<br>1-2 Pet<br>1-3 Joh<br>Jud");
+//var section8 = makeMenuSection(sectionsContainer,"section",s1,"<br><br>Upp");
