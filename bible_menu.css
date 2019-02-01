@@ -16,7 +16,7 @@
 }
 
 iframe{
-    display: none;
+    display: block;
 }
  
 .fab:hover {
@@ -25,7 +25,7 @@ iframe{
 
 .fab.clicked{
    color: rgba(255, 255, 255, 0);
-   background-color:#ff7b00;
+   background-color:#ff7b006b;
 
    /*width:40px;
    height:40px;
@@ -114,12 +114,23 @@ height: 20px;
 }
 
 .chapter{
-height: 25px;
-border: 2px solid #ffffff00;
-text-align: -webkit-center;
-color: white;
-font-size: initial;
-background: darkgray;
+
+    height: 25px;
+
+    border: 2px solid #ffffff00;
+
+    text-align: -webkit-center;
+
+    color: white;
+
+    font-size: initial;
+
+    background: darkgray;
+}
+
+.chapter:hover{
+
+    background: #ff7b00;
 }
 
 table{

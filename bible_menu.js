@@ -142,8 +142,27 @@ function makeMenuSection(parent,cls,books,books_str){
             }
             
             var cell = row.insertCell(-1);
+            //create div with link
             cell.innerHTML = ""+(i+1);
             cell.classList.add("chapter");
+            cell.book = book;
+            cell.chapter = i+1;
+            var open = function(e){
+                var cell = e.target;
+                var url = cell.book.urlStart + cell.chapter + cell.book.urlEnd;
+                console.log(url);
+                var iframe = document.getElementById("iframe");
+                if(iframe){
+                    document.getElementById("iframe").src=url;
+                }else{
+                    window.location = url;
+                }
+                
+               
+                
+            }
+            cell.addEventListener("mouseup", open, false);
+            cell.addEventListener("touchend", open, false);
             
             //var chapter = document.createElement("div");
             //chapter.classList.add("chapter");
@@ -171,15 +190,15 @@ s1 = [
         "label":"Matteusevangeliet",
         "short":"Matt",
         "chapters":28,
-        "url-start":"https://grundbibeln.se/matt-",
-        "url-end":"/"
+        "urlStart":"https://grundbibeln.se/matt-",
+        "urlEnd":"/"
     },
     {
         "label":"Markusevangeliet",
         "short":"Mark",
         "chapters":16,
-        "url-start":"https://grundbibeln.se/mark-",
-        "url-end":"/"
+        "urlStart":"https://grundbibeln.se/mark-",
+        "urlEnd":"/"
     }
 ];
 
