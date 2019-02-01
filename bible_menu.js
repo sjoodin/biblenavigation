@@ -50,9 +50,29 @@ plus.classList.add("fab");
     }
 
     function dragEnd(e) {
+
+      //navigate to selected chapter 
+      var elem = document.elementFromPoint(
+            e.changedTouches[0].pageX,
+            e.changedTouches[0].pageY,
+       );
+      var url = elem.url;
+      if(url){
+          console.log(url);
+          var iframe = document.getElementById("iframe");
+          if(iframe){
+              document.getElementById("iframe").src=url;
+          }else{
+              window.location = url;
+          }
+      }
+      
+
+
+      
       initialX = currentX;
       initialY = currentY;
-      
+
       var xOffset = 0;
       var yOffset = 0;
       
@@ -63,14 +83,14 @@ plus.classList.add("fab");
       plus.classList.remove("clicked");
       overlay.classList.remove("visible");
       menu.classList.remove("visible");
-
+      
     }
 
     function drag(e) {
       if (active) {
         
         if(!e.targetTouches){
-            e.preventDefault(); 
+            e.preventDefault();
         }
         
       
@@ -80,11 +100,11 @@ plus.classList.add("fab");
         } else {
           currentX = e.clientX - initialX;
           currentY = e.clientY - initialY;
-        }
+        } 
 
         xOffset = currentX;
         yOffset = currentY;
-
+        
         setTranslate(xOffset, yOffset, dragItem);
       }
     }
@@ -147,23 +167,9 @@ function makeMenuSection(parent,cls,books,books_str){
             cell.classList.add("chapter");
             cell.book = book;
             cell.chapter = i+1;
-            var open = function(e){
-                var cell = e.target;
-                var url = cell.book.urlStart + cell.chapter + cell.book.urlEnd;
-                console.log(url);
-                var iframe = document.getElementById("iframe");
-                if(iframe){
-                    document.getElementById("iframe").src=url;
-                }else{
-                    window.location = url;
-                }
-                
-               
-                
-            }
-            cell.addEventListener("mouseup", open, false);
-            cell.addEventListener("touchend", open, false);
-            
+
+            cell.url = cell.book.urlStart + cell.chapter + cell.book.urlEnd;
+
             //var chapter = document.createElement("div");
             //chapter.classList.add("chapter");
             //chapter.innerHTML = ""+(i+1);
