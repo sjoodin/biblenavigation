@@ -426,7 +426,7 @@ var section6 = makeMenuSection(sectionsContainer,"section",s6,"1-2 Thess<br>1-2 
 var section7 = makeMenuSection(sectionsContainer,"section",s7,"<br>Heb<br>Jak<br>1-2 Pet");
 var section8 = makeMenuSection(sectionsContainer,"section",s8,"<br>1-3 Joh<br>Jud<br>Upp");
 
-var showInitially = true;
+var showInitially = false;
 //
 
 if(showInitially){

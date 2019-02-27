@@ -118,25 +118,24 @@ iframe{
 .chapters.visible{
     width: -webkit-fill-available;
     display:inline-block;
-    max-width: 225px;
 }
 
 
 .booktitle{
 
-    height: 23px;
+height: 4vh;
 
-    color: white;
+color: white;
 
-    font-size: medium;
+font-size: medium;
 
-    padding-left: 10px;
+padding-left: 10px;
 
-    padding-top: 3px;
+padding-top: 3px;
 }
 
 .chapter{
-    height: 28px;
+    height: 29px;
     border: 2px solid #ffffff00;
     text-align: -webkit-center;
     color: white;
@@ -146,17 +145,6 @@ iframe{
     max-width: 20px;
 }
 
-@media only screen 
-    and (min-device-width : 320px) 
-    and (max-device-width : 480px)
-{
-    .chapter{
-        max-width: unset;
-    }
-    .chapters.visible{
-        max-width: unset;
-    }
-}
 
 .chapter:hover{
 
@@ -167,30 +155,88 @@ table{
     width: -webkit-fill-available;
 }
 
-/* iPhone5+ */ 
-@media all and
-    only screen and (min-device-height: 568px)
-    and (max-device-height: 666px)
+/*iphone 4*/
+@media (min-device-height: 380px)
+    and (max-device-width : 320px)
 {
     .chapter{
-        height: 36px;
+        height: 6.1vh;
     }
 }
 
-/* iPhone 6,7,8 */
-@media all and
-    only screen and (min-device-height: 667px)
-    and (max-device-height: 811px)
+/*iphone 5*/
+@media (min-device-height: 568px)
+    and (max-device-width : 320px)
 {
     .chapter{
-        height: 28px;
+        height: 6.5vh;
     }
 }
 
-/* iPhone X */
-@media only screen and (min-device-height: 812px)
+
+
+/*iphone 6,7,8*/
+@media (min-device-height: 667px)
+and (max-device-width : 375px)
 {
     .chapter{
-        height: 58px;
+        height: 6.5vh;
+        max-width: unset;
+    }
+    .chapters.visible{
+        max-width: unset;
     }
 }
+
+/*iphone 6,7,8 plus*/
+@media (min-device-height: 736px)
+and (max-device-width : 414px)
+{
+    .chapter{
+        height: 6.7vh;
+        max-width: unset;
+    }
+    .chapters.visible{
+        max-width: unset;
+    }
+}
+
+/*iphone 6,7,8 plus*/
+@media (min-device-height: 812px)
+and (max-device-width : 375px)
+{
+    .chapter{
+        height: 6.7vh;
+        max-width: unset;
+    }
+    .chapters.visible{
+        max-width: unset;
+    }
+}
+
+/*iphone X */
+@media (min-device-height: 1024px)
+and (max-device-width : 335px)
+{
+    .chapters.visible{
+        max-width: 225px;
+    }
+    .chapter{
+        max-width: unset;
+        height: 4.5vh;
+    }
+}
+
+/* laptop*/
+@media (min-device-height: 500px)
+and (min-device-width : 415px)
+{
+    .chapters.visible{
+        max-width: 225px;
+    }
+    .chapter{
+        max-width: unset;
+        height: 4.5vh;
+    }
+}
+
