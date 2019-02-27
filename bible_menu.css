@@ -12,7 +12,7 @@
    position: fixed;
    right: 50px;
    bottom: 50px;
-   cursor: grab; 
+   cursor: grab;
 }
 
 iframe{
@@ -58,7 +58,7 @@ iframe{
     width: -webkit-fill-available;
     max-width: 500px;
     left:0px;
-    background-color:rgba(230, 179, 255, 0.78);
+    background-color: rgba(230, 179, 255, 0.0);
     display: flex;
 }
 
@@ -70,10 +70,13 @@ iframe{
     top:0px;
     width:0px;
     font-family: Muli,sans-serif;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
     font-weight: 500;
     font-size: x-small;
     transition: all 0.1s cubic-bezier(0.22, 0.61, 0.36, 1);
     /* overflow: hidden; */
+    
+    display:none;
 }
 
 .sections{
@@ -83,7 +86,7 @@ iframe{
 }
 
 .section{
-    height: 12%;
+    height: 12.5%;
     max-height:200px;
     background-color:#9e9e9e;
     border-width:thin;
@@ -105,28 +108,54 @@ iframe{
 .chapters{
     background-color: gray;
     height: 100%;
+    width: 0px;
+    display:none;
+    /* height: 480px; */
+    /* max-height: 812px; */
+    /* max-height: 483px; */
+}
+
+.chapters.visible{
     width: -webkit-fill-available;
     display:inline-block;
+    max-width: 225px;
 }
+
 
 .booktitle{
 
-height: 20px;
-}
-
-.chapter{
-
-    height: 25px;
-
-    border: 2px solid #ffffff00;
-
-    text-align: -webkit-center;
+    height: 23px;
 
     color: white;
 
-    font-size: initial;
+    font-size: medium;
 
+    padding-left: 10px;
+
+    padding-top: 3px;
+}
+
+.chapter{
+    height: 28px;
+    border: 2px solid #ffffff00;
+    text-align: -webkit-center;
+    color: white;
+    font-size: initial;
     background: darkgray;
+    min-width: 20px;
+    max-width: 20px;
+}
+
+@media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 480px)
+{
+    .chapter{
+        max-width: unset;
+    }
+    .chapters.visible{
+        max-width: unset;
+    }
 }
 
 .chapter:hover{
@@ -135,6 +164,33 @@ height: 20px;
 }
 
 table{
-    
-width: -webkit-fill-available;
+    width: -webkit-fill-available;
+}
+
+/* iPhone5+ */ 
+@media all and
+    only screen and (min-device-height: 568px)
+    and (max-device-height: 666px)
+{
+    .chapter{
+        height: 36px;
+    }
+}
+
+/* iPhone 6,7,8 */
+@media all and
+    only screen and (min-device-height: 667px)
+    and (max-device-height: 811px)
+{
+    .chapter{
+        height: 28px;
+    }
+}
+
+/* iPhone X */
+@media only screen and (min-device-height: 812px)
+{
+    .chapter{
+        height: 58px;
+    }
 }
