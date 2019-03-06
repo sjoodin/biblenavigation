@@ -8,6 +8,9 @@ content.appendChild(overlay);
 var plus = document.createElement("div");
 plus.innerHTML = "GB";
 plus.classList.add("fab");
+plus.classList.add("noselect");
+
+//var keepSectionSelected = false;
 
     var dragItem = plus;
 
@@ -101,6 +104,18 @@ plus.classList.add("fab");
             e.preventDefault();
         }
         
+        var x = e.changedTouches?e.changedTouches[0].pageX:e.x;
+        var y = e.changedTouches?e.changedTouches[0].pageY:e.y;
+            
+        if(x<50){
+            //identify object
+            var elem = document.elementFromPoint(x,y);
+            if(elem && elem.chaptersView){
+                showChapters(elem);
+            }
+        }
+
+        
       
         if (e.type === "touchmove") {
           currentX = e.touches[0].clientX - initialX;
@@ -126,6 +141,7 @@ plus.classList.add("fab");
 
 var menu = document.createElement("div");
 menu.classList.add("menu");
+menu.classList.add("noselect");
 content.appendChild(menu);
 menu.setAttribute("id", "menu");
 
@@ -137,6 +153,16 @@ sectionsContainer.classList.add("sections");
 menu.appendChild(sectionsContainer);
 var sectionsWidth = 50;
 sectionsContainer.style.width = sectionsWidth+"px";
+sectionsContainer.markSelected = function(section){
+    if(!(sectionsContainer.selected && sectionsContainer.selected == section)){
+        if(sectionsContainer.selected){
+            sectionsContainer.selected.classList.remove("hovering");
+        }
+        sectionsContainer.selected = section;
+        sectionsContainer.selected.classList.add("hovering");
+        }
+    
+}
 
 var chaptersContainer = document.createElement("div");
 chaptersContainer.setAttribute("id", "chaptersContainer");
@@ -147,18 +173,21 @@ chaptersContainer.style.width = chaptersWidth+"px";
 
 var bright = true;
 
-function showChapters(e){
+
+function showChapters(section){
     chaptersContainer.classList.add("visible");
     try{
         chaptersContainer.removeChild(chaptersContainer.firstChild);
-    }catch(e){}
-    chaptersContainer.appendChild(e.target.chaptersView);
+    }catch(b){}
+    chaptersContainer.appendChild(section.chaptersView);
+    sectionsContainer.markSelected(section);
 }
 
 function makeMenuSection(parent,cls,books,books_str){
     var section = document.createElement("div");
     var chaptersView = document.createElement("div");
     section.chaptersView = chaptersView;
+    chaptersView.section = section;
     //create chapters
     for (i = 0; i < books.length; i++) {
         //show book title
@@ -184,6 +213,7 @@ function makeMenuSection(parent,cls,books,books_str){
             cell.chapter = j+1;
 
             cell.url = cell.book.urlStart + cell.chapter + cell.book.urlEnd;
+            cell.section = section;
             
             //var chapter = document.createElement("div");
             //chapter.classList.add("chapter");
@@ -197,12 +227,17 @@ function makeMenuSection(parent,cls,books,books_str){
     section.innerHTML=books_str;
     parent.appendChild(section);
     
-    section.addEventListener("mousemove", showChapters, true);
-    section.addEventListener("touchmove", showChapters, true);
+    section.addEventListener("mousemove", function(e){
+        showChapters(e.target);
+    }, true);
+
+    section.addEventListener("touchmove", function(e){
+        showChapters(e.target);
+    }, true);
 
     return section;
 }
-
+//
 
 s1 = [
     {
@@ -435,3 +470,4 @@ if(showInitially){
     sectionsContainer.classList.add("visible");
     chaptersContainer.appendChild(section4.chaptersView);
 }
+

@@ -44,13 +44,17 @@ iframe{
    transition: all 0.2s ease-in-out;
 }
 
+.fab.hidden{
+    background-color:rgba(255, 255, 255, 0);
+}
+
 .overlay.visible{
     position:fixed;
-    width:100%;
-    height:100%;
+    /*width:100%;
+    height:100%;*/
     left:0px;
     top:0px;
-    background-color:rgba(255, 255, 255, 0);
+    background-color:rgba(255, 255, 255, 100);
 
 }
 
@@ -94,6 +98,7 @@ iframe{
     cursor:grab;
     text-align:center;
     padding:0px 4px;
+    /* color: #993300; */
 }
 
 
@@ -101,7 +106,7 @@ iframe{
   background-color:lightgray;
 }
 
-.section:hover,.section.bright:hover{
+.section:hover,.section.hovering{
     background-color:#ff7b00;
 }
 
@@ -146,7 +151,7 @@ padding-top: 3px;
 }
 
 
-.chapter:hover{
+.chapter:hover,.chapter.hovering{
 
     background: #ff7b00;
 }
@@ -240,3 +245,12 @@ and (min-device-width : 415px)
     }
 }
 
+.noselect{
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
