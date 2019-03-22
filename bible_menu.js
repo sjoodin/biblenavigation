@@ -1,9 +1,21 @@
+//fetch last opened url 
+var currentPage = localStorage.getItem('current-page');
+
+setTimeout(function(){
+     if(currentPage){
+            document.getElementById("iframe").src = currentPage;
+        }else{
+            document.getElementById("iframe").src = "https://grundbibeln.se/matt-1/";
+        }
+     }, 150);
+
+
+
 var content = document.getElementById("content");
 
 var overlay = document.createElement("div");
 overlay.classList.add("overlay");
 content.appendChild(overlay);
-
 
 var plus = document.createElement("div");
 plus.innerHTML = "GB";
