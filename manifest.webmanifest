@@ -1,9 +1,10 @@
 {
   "short_name": "Grundbibeln",
   "name": "Grundbibeln",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
+  "theme_color": "#fff",
+  "background_color": "#fff",
   "display": "standalone",
+  "description": "Grundbibeln web app",
   "icons": [
     {
       "src": "logo-48.png",
@@ -14,7 +15,12 @@
       "src": "logo.png",
       "type": "image/png",
       "sizes": "66x66"
+    },
+    {
+      "src": "logo-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
     }
   ],
-  "start_url": "/?utm_source=launcher"
+  "start_url": "/?utm_source=homescreen"
 }
