@@ -79,7 +79,6 @@ iframe{
     font-size: x-small;
     transition: all 0.1s cubic-bezier(0.22, 0.61, 0.36, 1);
     /* overflow: hidden; */
-    
     display:none;
 }
 
@@ -118,6 +117,7 @@ iframe{
     /* height: 480px; */
     /* max-height: 812px; */
     /* max-height: 483px; */
+    /* font-family: multi,sans-serif; */
 }
 
 .chapters.visible{

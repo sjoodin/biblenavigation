@@ -471,3 +471,34 @@ if(showInitially){
     chaptersContainer.appendChild(section4.chaptersView);
 }
 
+iframe.contentWindow.addEventListener('scroll', function(event) {
+  console.log(event);
+}, false);
+//hide fab on scroll down
+var prevScrollpos = iframe.pageYOffset;
+iframe.onscroll = function() {
+  var currentScrollPos = iframe.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    //show
+    plus.classList.add("hidden");
+  } else {
+    //hide
+    plus.classList.remove("hidden");
+  }
+  prevScrollpos = currentScrollPos;
+}
+
+
+var lF = document.getElementById('iframe').contentWindow;
+	if(window.pageYOffset!=undefined){ //opera, firefox,& gecko browsers
+		lF.onscroll = function(){
+			console.log("scroll");
+		}
+	}
+	else{//IE	
+  		if(lF.document.documentElement)lF= lF.document.documentElement; 
+  		else lF=document.body;  		
+ 		lF.onscroll=function(){
+			console.log("scroll");
+		}		
+	}
