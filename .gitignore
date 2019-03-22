@@ -1,1 +1,9 @@
 launching server.txt
+node_modules
+package-lock.json
+server.crt
+server.csr
+server.key
+test.key
+v3.ext
+.DS_Store
