@@ -1,4 +1,5 @@
 .fab {
+   background-repeat: no-repeat;
    width: 70px;
    height: 70px;
    background-color: gray;
@@ -10,14 +11,26 @@
    text-align: center;
    line-height: 70px;
    position: fixed;
-   right: 50px;
-   bottom: 50px;
+   left: 50%;
+   margin-left:-35px;
+   bottom: -0px;
    cursor: grab;
+   background-image: url(images/anchor.png);
+   background-size: 46px;
+   background-image: url(images/anchor4.png);
+   background-size: 136px;
+   background-position: center;
 }
 
 iframe{
     display: block;
 }
+
+iframe.loading{
+    background-image: url("images/loading.gif");   
+    background-repeat: no-repeat;
+    background-position:center;
+   }
  
 .fab:hover {
    box-shadow: 0 6px 14px 0 #666;
@@ -26,6 +39,7 @@ iframe{
 .fab.clicked{
    color: rgba(255, 255, 255, 0);
    background-color:#ff7b006b;
+   background-image: url(images/anchor5.png);
    
 
    /*width:40px;
@@ -140,7 +154,7 @@ padding-top: 3px;
 }
 
 .chapter{
-    height: 29px;
+    height: max-content;
     border: 2px solid #ffffff00;
     text-align: -webkit-center;
     color: white;
@@ -171,7 +185,7 @@ table{
 
 /*iphone 5*/
 @media (min-device-height: 568px)
-    and (max-device-width : 320px)
+    and (max-device-width : 360px)
 {
     .chapter{
         height: 6.5vh;
@@ -198,7 +212,7 @@ and (max-device-width : 375px)
 and (max-device-width : 414px)
 {
     .chapter{
-        height: 6.7vh;
+        height: 6.5vh;
         max-width: unset;
     }
     .chapters.visible{
@@ -211,7 +225,7 @@ and (max-device-width : 414px)
 and (max-device-width : 375px)
 {
     .chapter{
-        height: 6.7vh;
+        height: 6.5vh;
         max-width: unset;
     }
     .chapters.visible{
@@ -253,4 +267,26 @@ and (min-device-width : 415px)
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
+}
+
+.center-content{
+    text-align:center;
+    margin: auto;
+}
+
+.centered-content{
+    display: block;
+    font-family: Muli,sans-serif;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    
+}
+
+#intro-image{
+    background-image:url("images/introduction-20.gif");
+    background-size:contain;
+    background-position:center;
+    height:400px;
+    max-height:65%;
+    background-repeat:no-repeat;
+    height:-webkit-fill-available;
 }

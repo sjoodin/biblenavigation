@@ -1,15 +1,26 @@
 //fetch last opened url 
 var currentPage = localStorage.getItem('current-page');
+var iframe = document.getElementById("iframe");
+function navigateTo(url){
+    iframe.src = url;
+    // show loading spinner
+    //iframe.classList.add("loading");
+}
 
 setTimeout(function(){
      if(currentPage){
-            document.getElementById("iframe").src = currentPage;
-        }else{
-            document.getElementById("iframe").src = "https://grundbibeln.se/matt-1/";
-        }
-     }, 150);
+            navigateTo(currentPage);
+     }else{
+         iframe.src = "intro.html";
+     }
+     iframe.onload = function() {
+       // hide loading spinner
+        //iframe.classList.remove("loading");
+     };
+}, 150);
 
-
+const urlParams = new URLSearchParams(window.location.search);
+var debug = urlParams.get('debug') != undefined;
 
 var content = document.getElementById("content");
 
@@ -18,7 +29,7 @@ overlay.classList.add("overlay");
 content.appendChild(overlay);
 
 var plus = document.createElement("div");
-plus.innerHTML = "GB";
+plus.innerHTML = "";
 plus.classList.add("fab");
 plus.classList.add("noselect");
 
@@ -473,7 +484,7 @@ var section6 = makeMenuSection(sectionsContainer,"section",s6,"1-2 Thess<br>1-2 
 var section7 = makeMenuSection(sectionsContainer,"section",s7,"<br>Heb<br>Jak<br>1-2 Pet");
 var section8 = makeMenuSection(sectionsContainer,"section",s8,"<br>1-3 Joh<br>Jud<br>Upp");
 
-var showInitially = false;
+var showInitially = debug;
 //
 
 if(showInitially){
@@ -509,8 +520,8 @@ var lF = document.getElementById('iframe').contentWindow;
 	}
 	else{//IE	
   		if(lF.document.documentElement)lF= lF.document.documentElement; 
-  		else lF=document.body;  		
+  		else lF=document.body;
  		lF.onscroll=function(){
 			console.log("scroll");
-		}		
+		}
 	}

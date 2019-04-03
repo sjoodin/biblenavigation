@@ -4,20 +4,20 @@
   "theme_color": "#fff",
   "background_color": "#fff",
   "display": "standalone",
-  "description": "Grundbibeln web app",
+  "description": "Grundbibeln app",
   "icons": [
     {
-      "src": "logo-48.png",
+      "src": "images/logo-48.png",
       "type": "image/png",
       "sizes": "48x48"
     },
     {
-      "src": "logo.png",
+      "src": "images/logo.png",
       "type": "image/png",
       "sizes": "66x66"
     },
     {
-      "src": "logo-192.png",
+      "src": "images/logo-192.png",
       "type": "image/png",
       "sizes": "192x192"
     }
