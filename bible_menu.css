@@ -27,9 +27,8 @@ iframe{
 }
 
 #iframe-wrapper{
-    -webkit-overflow-scrolling: touch;
-  	overflow-y: scroll;
-  	
+    overflow:auto;
+    -webkit-overflow-scrolling:touch;
 }
 
 iframe.loading{
