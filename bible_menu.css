@@ -26,11 +26,6 @@ iframe{
     display: block;
 }
 
-#iframe-wrapper{
-    overflow:auto;
-    -webkit-overflow-scrolling:touch;
-}
-
 iframe.loading{
     background-image: url("images/loading.gif");   
     background-repeat: no-repeat;
