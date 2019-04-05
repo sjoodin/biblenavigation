@@ -1,0 +1,66 @@
+<script src="https://grundbibeln.se/wp-content/uploads/custom-css-js/533.js"><span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start">﻿</span></script>
+<h2>Välj en bok och ett kapitel</h2>
+<small><strong>Obs:</strong> Eventuella språkfel kan förekomma, översättningen är inte färdig.</small>
+<select id="book" onchange="newBook(value);">
+<option value="0,0"></option>
+<option value="matt,28">Matteusevangeliet</option>
+<option value="mark,16">Markusevangeliet</option>
+<option value="luk,24">Lukasevangeliet</option>
+<option value="joh,21">Johannesevangeliet</option>
+<option value="apg,28">Apostlagärningarna</option>
+<option value="rom,16">Romarbrevet</option>
+<option value="1kor,16">Första Korintierbrevet</option>
+<option value="2kor,13">Andra Korintierbrevet</option>
+<option value="gal,6">Galaterbrevet</option>
+<option value="ef,6">Efesierbrevet</option>
+<option value="fil,4">Filipperbrevet</option>
+<option value="kol,4">Kolosserbrevet</option>
+<option value="1thess,5">Första Thessalonikerbrevet</option>
+<option value="2thess,3">Andra Thessalonikerbrevet</option>
+<option value="1tim,6">Första Timotheosbrevet</option>
+<option value="2tim,4">Andra Timotheosbrevet</option>
+<option value="tit,3">Brevet till Titus</option>
+<option value="filem,1">Brevet till Filemon</option>
+<option value="heb,13">Hebreerbrevet</option>
+<option value="jak,5">Jakobs brev</option>
+<option value="1pet,5">Första Petrusbrevet</option>
+<option value="2pet,3">Andra Petrusbrevet</option>
+<option value="1joh,5">Första Johannesbrevet</option>
+<option value="2joh,1">Andra Johannesbrevet</option>
+<option value="3joh,1">Tredje Johannesbrevet</option>
+<option value="jud,1">Judas brev</option>
+<option value="upp,22">Uppenbarelseboken</option>
+</select>
+<select id="chapter">
+</select>
+<input type="submit" onClick="openUrl()" value="Öppna" />
+
+<h4 style="text-align: center;"><strong>Välkommen till Grundbibeln</strong></h4>
+
+<hr />
+
+<strong>Vad är Grundbibeln?</strong>
+Grundbibeln är en översättning av King James Version 1611 som använder den grekiska grundtexten Textus Receptus till Nya Testamentet. Eftersom språket i King James Version kan upplevas ålderdomligt av nutida bibelläsare, har vi som står bakom arbetet med Grundbibeln valt att använda oss av en modern svensk språkdräkt.
+
+<strong>Hur finansieras arbetet med Grundbibeln?</strong>
+All arbetstid med översättningen av Grundbibeln är ideell, vilket innebär att samtliga personer som arbetar med översättningen gör det utan ekonomisk ersättning. De kostnader som hittills har följt med arbetet har bekostats av initiativtagare och grundaren av Grundbibeln. Vidare anser vi som står bakom arbetet med Grundbibeln att Guds Ord ska vara helt och hållet gratis och av den anledningen har vi valt att ta fram en svensk bibelöversättning som i framtiden kommer att tryckas och säljas för endast tryckkostnadspris, där frakt och emballage kommer att inkluderas i priset.
+
+<strong>När beräknas översättningen av Nya Testamentet vara klart?</strong>
+Arbetet med översättningen påbörjades 2018-03 och pågår just nu för fullt. I snitt översätts cirka en till två kapitel ur Nya Testamentet varje dag, vilket innebär att arbetet med översättningen lär ta cirka två år. Eventuella språkfel kontrolleras och justeras därefter.
+
+<strong>Hur går översättningsarbetet till och hur fördelas uppgifterna bland alla involverade?</strong>
+Föreningen har en styrelse som består av en Ordförande, Sekreterare, Kassör och Justerare och utöver dessa personer så finns det ytterligare tre personer som står bakom arbetet med Grundbibeln. Dessa sju delar på arbetsuppgifterna så att en översätter från engelska till svenska, tre korrigerar språket samt kontrollerar översättningen, en som ansvarar för den sociala delen, en webbutvecklare som uppdaterar hemsidan dagligen och en som längre fram ansvarar för att spela in översättningen i ljudformat. För övrigt finns det andra personer runt omkring i landet som bidrar med stöd på olika sätt, en del gör det bland annat genom att rapportera eventuella språkfel medan andra jämför Grundbibelns översättning med den engelska översättningen "King James Version" för att se hur pass lika översättningarna är med varandra.
+
+<strong>Finns det planer på att även översätta Gamla Testamentet?</strong>
+För tillfället så har vi inga planer på att göra det utan fokuserar enbart på arbetet med översättningen av Nya Testamentet.
+
+<strong>Påverkas bibelöversättningen av den tro som översättarna har?
+</strong>Nej, vi ska inte anpassa Bibeln efter vår tro, utan tvärtom, vi ska anpassa vår tro efter vad Gud säger i sitt ord.
+
+<strong>Hur fritt får man använda bibeltexterna?</strong>
+Översättningen är copyright/upphovsrättsskyddat endast för att förhindra att någon ändrar på texten i översättningen och trycker den, eller väljer helt enkelt att trycka texten som den är och börjar tjäna pengar på den. För övrigt ska du både kunna citera och kopiera hur mycket text som du vill till ditt arbete för Gud, eller till din predikan – detta helt gratis. Du behöver inte nödvändigtvis referera att bibeltexten som används är tagen från Grundbibeln. Vi tror att Guds ord har inget upphovsrättsskydd, men i detta fall har vi det endast för att säkerställa oss att Grundbibelns översättning inte råkar hamna i fel händer, där risken för att göra affärer med vinst finns.
+
+<strong>Jag har hittat ett fel i Grundbibel översättningen, vad gör jag?</strong>
+Vi tror inte att det finns någon översättning som inte har så kallade "brister", det är endast originalet som är fullkomlig. Eftersom det finns över 5800 hittade manuskript av Nya Testamentet på grekiska, betyder det att vi kan jämföra dem och se om det har skett förändringar i dagens bibelöversättningar. I det här fallet har vi använt oss av King James Version som bygger på handskriften Textus Receptus. När vi arbetar med en översättning så finns det ett område som heter ”textkritik”, genom det kan vi se om det skett någon stor förändring i Grundbibelns översättning och då gå tillbaka och jämföra med den handskrift vi använt oss av. Har du hittat ett eller flera fel kan du rapportera det till oss så att vi kan försöka åtgärda felet så snart som möjligt! Du kan rapportera felet här: <a href="https://grundbibeln.se/rapportera-fel/">Grundbibeln.se/rapportera-fel/</a>
+
+<small>Senast uppdaterad: 27 Juli 2018</small>
